@@ -8,6 +8,7 @@ export const LogoDiv = styled.div`
     position:sticky;
     left:0;
     top:10;
+    
 `
 export const TopSection = styled.div`
     position:sticky;
@@ -17,17 +18,21 @@ export const TopSection = styled.div`
 `
 
 export const Span = styled.span`
-    ${({item})=>item === 'notes' && 
+  ${({ item }) =>
+    item === "notes" &&
     css`
-    background-color:white;
-    color:black;
-    border-radius:5px;`}
-    ${({item})=>item === 'cool' && css`
-        color:green;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+    `}
+  ${({ item }) =>
+    item === "cool" &&
+    css`
+      color: green;
     `}
     padding:0px;
-    margin-right:2px;
-`
+    margin-right: 2px;
+`;
 export const Button = styled.button`
     background-color:green;
     color:white;
@@ -65,9 +70,9 @@ export const TagsDiv = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    @media only screen and (min-width:600px){
-        align-items:start;
-    }
+    // @media only screen and (min-width:600px){
+    //     align-items:start;
+    // }
 `
 
 export const TagInput = styled.input`
@@ -77,10 +82,12 @@ export const TagInput = styled.input`
     font-size:1rem;
     background-color:black;
     color:white;
+    padding-left:5px;
 `
 
 export const TagInputDiv = styled.div`
     border: solid 1px green;
+    display:flex;
     width:50%;
     margin-top:30px;
     @media only screen and (min-width:600px){
@@ -89,7 +96,9 @@ export const TagInputDiv = styled.div`
 `
 
 export const TagAdd = styled.span`
- font-size:1.3rem;
+    font-size:1.3rem;
+    margin-left:auto;
+    margin-right:10px;
 `
 
 export const TagsContainer = styled.div`
@@ -243,12 +252,23 @@ export const NoteHead = styled.div`
     top:0;
 `
 export const TagSpan = styled.h3`
-display:none;
-@media only screen and (min-width:600px){
-    display:inline-block;
-    width:20%;
-}
-`
+  ${({ mobile }) =>
+    mobile === true
+      ? css`
+          display: inline-block;
+          color: white;
+          text-decoration: none;
+        `
+      : css`
+          display: none;
+          @media only screen and (min-width: 600px) {
+            display: inline-block;
+            width: 20%;
+            color: white;
+            text-decoration: none;
+          }
+        `}
+`;
 export const NoteSpan = styled.h3`
     display:inline-block;
     width:50%;
@@ -264,6 +284,7 @@ export const AddNote = styled.span`
     background-color:green;
     border-radius:5px;
     padding: 0px 8px;
+    color:white;
 `
 
 export const SearchTitle = styled.input`
@@ -273,6 +294,7 @@ export const SearchTitle = styled.input`
     border: 1px solid green;
     padding-left:5px;
     color:white;
+    outline:green;
 `
 
 export const AllNotes = styled.div`
@@ -315,6 +337,14 @@ export const TagSection = styled.div`
     }
 `
 
+export const MobileTagSection = styled.div`
+    display:flex;
+    flex-direction:column;
+    height:80vh;
+    width:200px;
+    padding: 10px;
+`
+
 export const TagSideBar = styled.div`
     width:300px;
     z-index:10;
@@ -322,6 +352,13 @@ export const TagSideBar = styled.div`
     left:0;
     background-color:black;
     position:fixed;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    @media only screen and (min-width:600px){
+        display:none;
+    }
 `
 
 export const MainContent = styled.div`
@@ -337,6 +374,8 @@ export const TagSearch = styled.input`
     margin-bottom:20px;
     width:80%;
     color:white;
+    outline:green;
+    padding-left:5px;
 `
 
 export const SearchedTags = styled.div`
@@ -373,3 +412,58 @@ export const Bar = styled.div`
     border-radius:10px;
   }
 `;
+
+export const CreateNoteDiv = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding: 20px 30px;
+`
+
+export const CreateNoteForm = styled.div`
+  display:flex;
+  flex-direction:column;
+  width:80%;
+  margin-top:2rem;
+  @media only screen and (min-width:600px){
+      width:60%;
+  }
+`
+
+export const Label = styled.label`
+  font-weight:bold;
+  font-size:1.2rem;
+  color:white;
+  background-color:black;
+  margin-bottom:1rem;
+`
+export const TextArea = styled.textarea`
+  width:100%;
+  height:40vh;
+  background-color:black;
+  border:1px solid green;
+  border-radius:10px;
+  color:white;
+  outline:green;
+  padding-left:10px;
+  padding-top:10px;
+  font-size:1.1rem;
+  margin-bottom:0.5rem;
+`
+
+export const NoteInput = styled.input`
+  width:100%;
+  background-color:black;
+  border: 1px solid green;
+  border-radius:5px;
+  height:40px;
+  color:white;
+  font-size:1.2rem;
+  outline:green;
+  padding-left:10px;
+  margin-bottom:1rem;
+`
+export const Save = styled.span`
+  color:white;
+  align-self:end;
+`
