@@ -3,25 +3,42 @@ import Logo from "../Components/Logo";
 import NoteHeader from "../Components/NoteHeader";
 import {AllNotes,NotesContainer,MainContent,Bar,TopSection,TagSideBar} from "../Components/Styled"
 import TagSide from "../Components/TagSide";
-import { useState } from "react";
+import MobileTagSide from "../Components/MobileTagSide";
+import { useState,useRef, useEffect } from "react";
 
 const Notes = () => {
     const [displayTags,setDisplayTags] = useState(false)
     const DisplayTags = () => {
         setDisplayTags(!displayTags)
     }
+    const ref = useRef()
 
+    const checkIfClickedOutside = (e) => {
+      if (displayTags && ref.current && !ref.current.contains(e.target)) {
+        setDisplayTags(false);
+      }
+    };
+
+
+    useEffect(()=>{
+      document.addEventListener("mousedown",checkIfClickedOutside)
+      return ()=>{
+        document.removeEventListener("mousedown",checkIfClickedOutside)
+      }
+    },[displayTags])
   return (
     <NotesContainer>
       <TopSection>
         <Logo />
-        <NoteHeader onClick={DisplayTags}/>
+        <NoteHeader onClick={DisplayTags} />
       </TopSection>
       <MainContent>
-        <TagSide/>
-        {displayTags && <TagSideBar>
-            <TagSide/>
-            </TagSideBar>}
+        {displayTags && (
+          <TagSideBar ref={ref}>
+            <MobileTagSide />
+          </TagSideBar>
+        )}
+        <TagSide />
         <Bar></Bar>
         <AllNotes>
           <NoteCard
