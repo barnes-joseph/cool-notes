@@ -28,37 +28,37 @@ export const Span = styled.span`
   ${({ item }) =>
     item === "cool" &&
     css`
-      color: green;
+      color: #66ff88;
     `}
     padding:0px;
-    margin-right: 2px;
+  margin-right: 2px;
 `;
 export const Button = styled.button`
-    background-color:green;
-    color:white;
-`
+  background-color: #66ff88;
+  color: white;
+`;
 export const Input = styled.input`
     border-bottom:solid 1px white;
     outline:none;
 `
 
 export const TagDiv = styled.div`
-    height:40px;
-    width:300px;
-    color:black;
-    background-color:green;
-    display:flex;
-    align-items:center;
-    border-radius:5px;
-    justify-content:space-between;
-    padding:10px;
-    box-sizing:border-box;
-    font-size:1rem;
-    margin-bottom:10px;
-    @media only screen and (min-width:600px){
-        width:200px;
-    }
-`
+  height: 40px;
+  width: 300px;
+  color: black;
+  background-color: #66ff88;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  @media only screen and (min-width: 600px) {
+    width: 200px;
+  }
+`;
 export const TagEdit = styled.div`
     width:40px;
     display:flex;
@@ -86,14 +86,14 @@ export const TagInput = styled.input`
 `
 
 export const TagInputDiv = styled.div`
-    border: solid 1px green;
-    display:flex;
-    width:50%;
-    margin-top:30px;
-    @media only screen and (min-width:600px){
-        width:300px;
-    }
-`
+  border: solid 1px #66ff88;
+  display: flex;
+  width: 50%;
+  margin-top: 30px;
+  @media only screen and (min-width: 600px) {
+    width: 300px;
+  }
+`;
 
 export const TagAdd = styled.span`
     font-size:1.3rem;
@@ -133,21 +133,21 @@ export const FormContainer = styled.div`
 export const FormSpan = styled.span`
     align-self:start; 
 `
-export const Form = styled.div`
+export const Form = styled.form`
     color:white;
-    border: solid 3px green;
-    border-radius:5px;
+    // border: solid 3px green;
+    // border-radius:5px;
     display:flex;
     flex-direction:column;
-    width:70%;
-    height:70vh;
-    padding-left:30px;
-    padding-top:20px;
+    width:80%;
+    height:80vh;
+    // padding-left:30px;
+    // padding-top:20px;
     box-sizing:border-box;
     margin-top:auto;
     margin-bottom:auto;
     @media only screen and (min-width:600px){
-        width: 320px
+        width: 50%;
     }
 `
 export const InputDiv = styled.div`
@@ -156,65 +156,71 @@ export const InputDiv = styled.div`
 `
 
 export const FormInput = styled.input`
-    width:80%;
+    width:100%;
     background-color:black;
     color:white;
     outline:none;
-    border:none;
-    border-bottom: 1px solid white;
-    margin-bottom:25px;
-    height:20px;
+    border:1px solid white;
+    // border-bottom: 1px solid white;
+    margin-bottom:0.5rem;
+    height:2rem;
     font-size:1.1rem;
+    border-radius:5px;
+    padding-left:5px;
 `
 export const FormLabel = styled.label`
-    margin-bottom:10px;
-    margin-top:20px;
+    margin-bottom:0.8rem;
+    margin-top:0.5rem;
     font-size:1.1rem;
 `
 
 export const SubmitDiv = styled.div`
-    margin-top:auto;
-    margin-bottom:10px;
+    // margin-top:auto;
+    // margin-bottom:10px;
     align-self:start;
-    color:green;
+    color:#66FF88;
     display:flex;
+    flex-direction:column-reverse;
     justify-content:space-between;
     align-items:center;
+    width:100%;
 `
 
-export const Submit = styled.button`
-    background-color:green;
+export const Submit = styled.input`
+    background-color:#66FF88;
     color:black;
     border:none;
     border-radius:5px;
-    padding:10px;
+    padding:10px 0;
     font-size:1.1rem;
-    margin-left:20px;
+    margin-top:20px;
+    width:100%;
 `
 
 export const NotesContainer = styled.div`
     padding:20px 10px;
+    box-sizing:border-box;
     @media only screen and (min-width:600px){
         padding:20px 30px;
     } 
 `
 
 export const NoteDiv = styled.div`
-    width:40%;
-    min-width:200px;
-    background-color:green;
-    color:black;
-    height:200px;
-    border-radius:5px;
-    padding-top:10px;
-    padding-left:10px;
-    box-sizing:border-box;
-    margin:10px;
-    @media only screen and (min-width:600px){
-        width:200px;
-        margin-left:0px;
-    }
-`
+  width: 40%;
+  min-width: 200px;
+  background-color: #66ff88;
+  color: black;
+  height: 200px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin: 10px;
+  @media only screen and (min-width: 600px) {
+    width: 200px;
+    margin-left: 0px;
+  }
+`;
 
 export const NoteParagraph = styled.p`
     width:180px;
@@ -278,24 +284,24 @@ export const NoteSpan = styled.h3`
     }
 `
 export const AddNote = styled.span`
-    display:inline-block;
-    font-size:1.3rem;
-    margin-right:10px;
-    background-color:green;
-    border-radius:5px;
-    padding: 0px 8px;
-    color:white;
-`
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-right: 10px;
+  background-color: #66ff88;
+  border-radius: 5px;
+  padding: 0px 8px;
+  color: black;
+`;
 
 export const SearchTitle = styled.input`
-    height:30px;
-    border-radius:5px;
-    background-color:black;
-    border: 1px solid green;
-    padding-left:5px;
-    color:white;
-    outline:green;
-`
+  height: 30px;
+  border-radius: 5px;
+  background-color: black;
+  border: 1px solid #66ff88;
+  padding-left: 5px;
+  color: white;
+  outline: green;
+`;
 
 export const AllNotes = styled.div`
     display:flex;
@@ -310,16 +316,24 @@ export const AllNotes = styled.div`
 `
 
 export const FilterDiv = styled.div`
-    display:flex;
-    width:50px;
-    height:25px;
-    justify-content:space-between;
-    padding: 0px 5px;
-    border-radius:5px;
-    margin-bottom:5px;
-    margin-right: 5px;
-    ${({filter})=>filter === true ? css`background-color:green;`: css` border:1px solid green;color:white;`}
-`
+  display: flex;
+  width: 50px;
+  height: 25px;
+  justify-content: space-between;
+  padding: 0px 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  ${({ filter }) =>
+    filter === true
+      ? css`
+          background-color: #66ff88;
+        `
+      : css`
+          border: 1px solid #66ff88;
+          color: white;
+        `}
+`;
 
 export const FilterTag = styled.span`
     width:40px;
@@ -367,16 +381,16 @@ export const MainContent = styled.div`
 
 `
 export const TagSearch = styled.input`
-    background-color:black;
-    border: 1px solid green;
-    height:30px;
-    border-radius:5px;
-    margin-bottom:20px;
-    width:80%;
-    color:white;
-    outline:green;
-    padding-left:5px;
-`
+  background-color: black;
+  border: 1px solid #66ff88;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 80%;
+  color: white;
+  outline: green;
+  padding-left: 5px;
+`;
 
 export const SearchedTags = styled.div`
     height:30%;
@@ -386,30 +400,30 @@ export const SearchedTags = styled.div`
 `
 
 export const FilteredTags = styled.div`
-    border: 1px solid green;
-    margin-top:auto;
-    height: 30%;
-    display:flex;
-    flex-wrap:wrap;
-    padding:10px;
-    box-sizing:border-box;
-    width:80%;
-    border-radius:5px;
-    overflow:auto;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-`
+  border: 1px solid #66ff88;
+  margin-top: auto;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 80%;
+  border-radius: 5px;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+`;
 export const Bar = styled.div`
   display: none;
   @media only screen and (min-width: 600px) {
-    display:inline-block;
+    display: inline-block;
     width: 2px;
     height: 300px;
-    border: 1px solid green;
-    background-color: green;
+    border: 1px solid #66ff88;
+    background-color: #66ff88;
     margin-right: 10%;
     align-self: center;
-    border-radius:10px;
+    border-radius: 10px;
   }
 `;
 
@@ -420,7 +434,7 @@ export const CreateNoteDiv = styled.div`
   padding: 20px 30px;
 `
 
-export const CreateNoteForm = styled.div`
+export const CreateNoteForm = styled.form`
   display:flex;
   flex-direction:column;
   width:80%;
@@ -438,32 +452,171 @@ export const Label = styled.label`
   margin-bottom:1rem;
 `
 export const TextArea = styled.textarea`
-  width:100%;
-  height:40vh;
-  background-color:black;
-  border:1px solid green;
-  border-radius:10px;
-  color:white;
-  outline:green;
-  padding-left:10px;
-  padding-top:10px;
-  font-size:1.1rem;
-  margin-bottom:0.5rem;
-`
+  width: 100%;
+  height: 40vh;
+  background-color: black;
+  border: 1px solid #66ff88;
+  border-radius: 10px;
+  color: white;
+  outline: #66ff88;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  ${({update})=>update === true && css`background-color:white; color:black;`}
+`;
 
 export const NoteInput = styled.input`
-  width:100%;
-  background-color:black;
-  border: 1px solid green;
-  border-radius:5px;
-  height:40px;
-  color:white;
-  font-size:1.2rem;
-  outline:green;
-  padding-left:10px;
-  margin-bottom:1rem;
-`
+  width: 100%;
+  background-color: black;
+  border: 1px solid #66ff88;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
+  font-size: 1.2rem;
+  outline: #66ff88;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+  ${({update})=>update === true && css`background-color:white; height:30px; width:70%;`}
+`;
 export const Save = styled.span`
   color:white;
   align-self:end;
 `
+export const NoteContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding:30px 20px;
+  box-sizing:border-box;
+`;
+export const Note = styled.div`
+  width:80%;
+  display:flex;
+  flex-direction:column;
+  margin-top:auto;
+  margin-bottom:auto;
+  height:80vh;
+  @media only screen and (min-width:600px){
+      width:60%;
+  }
+`
+export const Back = styled.div`
+  display:flex;
+  width:60px;
+  justify-content:space-between;
+  align-items:center;
+`
+
+export const NoteSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow-y: auto;
+  margin-top: 1rem;
+  background-color: #66ff88;
+  padding: 2rem;
+  border-radius: 10px;
+`;
+
+export const Title = styled.div`
+  display:flex;
+  width:100%;
+  justify-content:space-between;
+`
+
+export const NoteContent = styled.p`
+  height:90%;
+  overflow-y:auto;
+`
+
+export const NoteTagSpan = styled.h3`
+  color:white;
+`
+
+export const Nav = styled.div`
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:50px;
+`
+
+export const NavButton = styled.button`
+  background-color: #66ff88;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-left: 1rem;
+  font-weight: bold;
+`;
+
+export const HomeContainer = styled.div`
+  padding:20px 30px;
+  box-sizing:border-box;
+  width:100vw;
+  overflow-x:clip;
+  display:flex;
+  flex-direction:column;
+`
+
+export const HomeContent = styled.div`
+  display:flex;
+  @media only screen and (min-width:800px){
+      justify-content:space-between;
+      align-items:center;
+      margin-top:auto;
+      
+  }
+`
+export const Svg = styled.div`
+  @media only screen and (min-width:600px){
+    //   z-index:10;
+      margin-left:auto;
+      margin-right:2rem;
+  }
+`
+
+export const MakeNote = styled.div`
+  display: flex;
+  color: black;
+  flex-direction: column;
+  z-index: 10;
+  left: 20;
+  top: 10rem;
+  position: fixed;
+  font-size: 3.5rem;
+  font-weight:bold;
+  @media only screen and (min-width: 600px) {
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+    margin-left: 3rem;
+    margin-right: auto;
+    mix-blend-mode: difference;
+  }
+`;
+
+export const First = styled.span`
+  margin-left:1rem;
+`
+
+export const Second = styled.span`
+ margin-left:5rem;
+ mix-blend-mode:difference;
+`
+
+export const SelectTag = styled.select`
+  background-color: black;
+  color: white;
+  border: 1px solid #66ff88;
+  outline: #66ff88;
+  border-radius: 5px;
+  height: 2rem;
+  padding: 5px;
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+  }
+`;
