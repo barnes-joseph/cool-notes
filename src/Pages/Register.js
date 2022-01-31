@@ -46,7 +46,7 @@ const Register = () => {
       !registered ?
       <FormContainer>
         <Logo />
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} page='register'>
           <FormHeader header="Sign Up" />
           <InputDiv>
             <Input
@@ -78,7 +78,7 @@ const Register = () => {
             <Link to='/login' style={{color:'white',textDecoration:'none'}}>
             <span>Already have an account?</span>
             </Link>
-            <Submit type="submit" value={loading ? 'submitting ...' : 'submit'} />
+            <Submit type="submit" value={loading ? 'Submitting ...' : 'Submit'} />
           </SubmitDiv>
         </Form>
       </FormContainer> :

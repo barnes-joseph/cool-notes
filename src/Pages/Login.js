@@ -40,8 +40,8 @@ const Login = () => {
     !loggedIn ?
     <FormContainer>
       <Logo />
-      <Form onSubmit={onSubmit}>
-        <FormHeader header="Login" />
+      <Form onSubmit={onSubmit} page='login'>
+        <FormHeader header="Sign In" />
         <InputDiv>
           <Input name="email" type="email" onChange={onChange} label='Email' required/>
           <Input name="password" type="password" label='Password' onChange={onChange} required/>
@@ -50,7 +50,7 @@ const Login = () => {
           <Link to='/register' style={{color:'white',textDecoration:'none'}}>
             <span>Don't have an account?</span>
           </Link>
-          <Submit type="submit" value={loading ? 'submitting ...' : 'submit'} />
+          <Submit type="submit" value={loading ? 'Submitting ...' : 'Submit'} />
         </SubmitDiv>
       </Form>
     </FormContainer> :
