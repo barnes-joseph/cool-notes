@@ -7,9 +7,9 @@ const HomeNav = () => {
     return (
       <Nav>
         <Logo />
-        <div>
+        <div style={{display:'flex'}}>
           <Link to="/login">
-            <NavButton>Login</NavButton>
+            <NavButton>Sign In</NavButton>
           </Link>
           <Link to='/register'>
             <NavButton>Sign Up</NavButton>
