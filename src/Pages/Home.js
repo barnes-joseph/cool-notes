@@ -8,15 +8,15 @@ const Home = () => {
       <HomeContainer>
         <HomeNav />
         <HomeContent>
-          <MakeNote>
+          <MakeNote style={{ color: "#039924" }}>
             <First>
-              Make <span style={{'color':'green'}}>your</span>
+              Make <span>your</span>
             </First>
             <Second>notes cool</Second>
           </MakeNote>
-          <Svg>
+          {/* <Svg>
             <MemoNoteSvg style={{ "font-size": "30em" }} />
-          </Svg>
+          </Svg> */}
         </HomeContent>
       </HomeContainer>
     );
