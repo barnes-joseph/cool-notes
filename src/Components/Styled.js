@@ -131,8 +131,27 @@ export const FormContainer = styled.div`
 `
 
 export const FormSpan = styled.span`
-    align-self:start; 
+    align-self:start;
+    font-weight:500; 
 `
+
+export const Line1 = styled.span`
+    display:block;
+    height:5px;
+    width:60px;
+    background-color:#66ff88;
+`
+
+export const Line2 = styled.span`
+    display:block;
+    height:5px;
+    width:60px;
+    background-color:white;
+    margin-left:3px;
+    z-index:10;
+    margin-top:-2px;
+`
+
 export const Form = styled.form`
     color:white;
     // border: solid 3px green;
@@ -140,7 +159,8 @@ export const Form = styled.form`
     display:flex;
     flex-direction:column;
     width:80%;
-    height:80vh;
+    ${({page})=>page==='login' && css`height:300px;`}
+    ${({page})=>page==='register' && css`height:500px;`}
     // padding-left:30px;
     // padding-top:20px;
     box-sizing:border-box;
@@ -546,7 +566,7 @@ export const NavButton = styled.button`
   background-color: #66ff88;
   outline: none;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 0.5rem;
   border-radius: 5px;
   font-size: 1rem;
   margin-left: 1rem;
