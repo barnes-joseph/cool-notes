@@ -1,4 +1,5 @@
 import styled,{css} from 'styled-components'
+import backgroundImage from '../Assets/UI/note_background_female.png'
 
 export const LogoDiv = styled.div`
     align-self:start;
@@ -214,6 +215,7 @@ export const Submit = styled.input`
     padding:10px 0;
     font-size:1.1rem;
     margin-top:20px;
+    margin-bottom:10px;
     width:100%;
 `
 
@@ -257,6 +259,7 @@ export const NoteTitle = styled.span`
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
+    font-weight:500;
 `
 
 export const Menu = styled.div`
@@ -326,12 +329,13 @@ export const SearchTitle = styled.input`
 export const AllNotes = styled.div`
     display:flex;
     flex-wrap:wrap;
-    align-items:center;
+    justify-content: center;
     overflow:auto;
     @media only screen and (min-width:600px){
         width: 70%;
         height:100vh;
         overflow:auto;
+        justify-content: start;
     }
 `
 
@@ -584,6 +588,11 @@ export const HomeContainer = styled.div`
 
 export const HomeContent = styled.div`
   display:flex;
+  background:url(${backgroundImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:80vh;
+  margin-top:2.5rem;
   @media only screen and (min-width:800px){
       justify-content:space-between;
       align-items:center;
@@ -615,7 +624,7 @@ export const MakeNote = styled.div`
     font-size: 5rem;
     margin-left: 3rem;
     margin-right: auto;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
   }
 `;
 

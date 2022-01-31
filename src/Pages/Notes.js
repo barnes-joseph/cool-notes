@@ -1,7 +1,7 @@
 import NoteCard from "../Components/NoteCard";
 import Logo from "../Components/Logo";
 import NoteHeader from "../Components/NoteHeader";
-import {AllNotes,NotesContainer,MainContent,Bar,TopSection,TagSideBar} from "../Components/Styled"
+import {AllNotes,NotesContainer,MainContent,Bar,TopSection,TagSideBar,NavButton} from "../Components/Styled"
 import TagSide from "../Components/TagSide";
 import MobileTagSide from "../Components/MobileTagSide";
 import { useState,useRef, useEffect,useContext } from "react";
@@ -67,6 +67,11 @@ const Notes = () => {
     DeleteNote(parseInt(id),headers)
   }
 
+  const onSignOut = () => {
+    signOut()
+    setUnauthorized(true)
+  }
+
     useEffect(()=>{
       document.addEventListener("mousedown",checkIfClickedOutside)
       return ()=>{
@@ -82,65 +87,58 @@ const Notes = () => {
   return !unauthorized ? (
     <NotesContainer>
       <TopSection>
-        <Logo />
-        <NoteHeader
-          onClick={DisplayTags}
-          onChange={searchByTitle}
-        />
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+          <Logo />
+          <NavButton onClick={onSignOut}>Sign Out</NavButton>
+        </div>
+        <NoteHeader onClick={DisplayTags} onChange={searchByTitle} />
       </TopSection>
       <MainContent>
         {displayTags && (
           <TagSideBar ref={ref}>
-            <MobileTagSide
-              tags={tags}
-              onChange={searchByFilter}
-            />
+            <MobileTagSide tags={tags} onChange={searchByFilter} />
           </TagSideBar>
         )}
-        <TagSide
-          tags={tags}
-          onChange={searchByFilter}
-        />
+        <TagSide tags={tags} onChange={searchByFilter} />
         <Bar></Bar>
         <AllNotes>
-          {
-          !search ?
-          notes.map((note) => {
-            return (
-                <NoteCard
-                  title={note.title}
-                  text={note.content}
-                  key={note.id}
-                  id={note.id}
-                  DeleteNote={onDelete}
-                />
-            );
-          }):
-          searchedTag ?
-          searchedNotesByFilter.map((note) => {
-            return (
-                <NoteCard
-                  title={note.title}
-                  text={note.content}
-                  key={note.id}
-                  id={note.id}
-                  DeleteNote={onDelete}
-                />
-            );
-          }) :
-          title ?
-          searchedNotesByTitle.map((note) => {
-            return (
-                <NoteCard
-                  title={note.title}
-                  text={note.content}
-                  key={note.id}
-                  id={note.id}
-                  DeleteNote={onDelete}
-                />
-            );
-          }) : null
-          }
+          {!search
+            ? notes.map((note) => {
+                return (
+                  <NoteCard
+                    title={note.title}
+                    text={note.content}
+                    key={note.id}
+                    id={note.id}
+                    DeleteNote={onDelete}
+                  />
+                );
+              })
+            : searchedTag
+            ? searchedNotesByFilter.map((note) => {
+                return (
+                  <NoteCard
+                    title={note.title}
+                    text={note.content}
+                    key={note.id}
+                    id={note.id}
+                    DeleteNote={onDelete}
+                  />
+                );
+              })
+            : title
+            ? searchedNotesByTitle.map((note) => {
+                return (
+                  <NoteCard
+                    title={note.title}
+                    text={note.content}
+                    key={note.id}
+                    id={note.id}
+                    DeleteNote={onDelete}
+                  />
+                );
+              })
+            : null}
         </AllNotes>
       </MainContent>
     </NotesContainer>
