@@ -335,6 +335,7 @@ export const AllNotes = styled.div`
         width: 70%;
         height:100vh;
         overflow:auto;
+        justify-content: start;
     }
 `
 
